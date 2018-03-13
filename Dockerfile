@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:latest
 LABEL maintainer="Bjornskjald <github@bjorn.ml>"
 
 # Expose ports
@@ -7,7 +7,6 @@ LABEL maintainer="Bjornskjald <github@bjorn.ml>"
 EXPOSE 8080
 EXPOSE 8081
 
-ADD ./requirements.txt /tmp/requirements.txt
 
 RUN apk add --no-cache \
     python3 \
@@ -22,7 +21,7 @@ RUN apk add --no-cache \
     openssl-dev \
     && python3 -m ensurepip \
     && ln -s /lib /lib64 \
-    && pip3 install -r /tmp/requirements.txt \
+    && pip3 install git+https://github.com/mitmproxy/mitmproxy.git@latest \
     && rm -rf /var/cache/apk/* \
     && rm -rf ~/.cache/pip \
     && rm -rf /tmp/pip_build_root \
