@@ -21,7 +21,7 @@ RUN apk add --no-cache \
     openssl-dev \
     && python3 -m ensurepip \
     && ln -s /lib /lib64 \
-    && pip3 install git+https://github.com/mitmproxy/mitmproxy.git@latest \
+    && pip3 install git+https://github.com/mitmproxy/mitmproxy.git@master \
     && rm -rf /var/cache/apk/* \
     && rm -rf ~/.cache/pip \
     && rm -rf /tmp/pip_build_root \
