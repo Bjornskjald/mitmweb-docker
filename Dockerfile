@@ -31,4 +31,4 @@ RUN apk add --no-cache \
 # Location of the default mitmproxy CA files
 VOLUME ["/ca"]
 
-ENTRYPOINT [ "/usr/bin/mitmweb", "--cadir", "/ca", "--wiface", "0.0.0.0" ]
+ENTRYPOINT [ "/usr/bin/mitmweb", "--set", "cadir=/ca" ]
