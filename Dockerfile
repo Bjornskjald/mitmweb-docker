@@ -1,5 +1,5 @@
 FROM alpine:3.4
-MAINTAINER John McCabe <john@johnmccabe.net>
+LABEL maintainer="Bjornskjald <github@bjorn.ml>"
 
 # Expose ports
 #   - 8080: Default mitmproxy port
